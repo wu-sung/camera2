@@ -34,8 +34,8 @@ int main(int argc, char* argv[])
     auto mysub = node->create_subscription<sensor_msgs::msg::CompressedImage>("image/compressed", qos_profile, mysub_callback);
 
     // 비디오 파일 작성을 위한 설정
-    std::string filename = "output.mp4";  // 저장할 파일 이름
-    int codec = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');  // 코덱 설정
+    std::string filename = "output.avi";  // 저장할 파일 이름
+    int codec = cv::VideoWriter::fourcc('X', 'V', 'I', 'D');  // 코덱 설정
     double fps = 30.0;  // 프레임 속도 설정
     cv::Size frame_size(640, 360);  // 프레임 크기 설정
     writer.open(filename, codec, fps, frame_size, true);  // 비디오 파일 열기
